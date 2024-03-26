@@ -5,14 +5,38 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      height: theme => ({
+        '112': '28rem',
+        '120': '30rem',
+      }),
+      minHeight: theme => ({
+        '80': '20rem',
+      }),
+      colors: {
+        palette: {
+          lighter: '#F5F3FF',
+          light: '#DDD6FE',
+          primary: '#EF6D0F',
+          dark: '#4C1D95',
+          gray: '#f8f8f8',
+          orange: '#ef6d0f',
+          white: '#ffffff'
+        },
       },
+      fontFamily: {
+        primary: ['"Josefin Sans"']
+      }
     },
   },
-  plugins: [],
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class',
+    }),
+  ],
 };

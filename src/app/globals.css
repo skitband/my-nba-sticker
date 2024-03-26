@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,15 +18,16 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.triangle::before {
+  content: '';
+  height: 100%;
+  position: absolute;
+  top: 0; 
+  left: 0em;
+  border: 1em solid transparent;
+  border-left-color: #ffffff;
 }
+
 
 @layer utilities {
   .text-balance {
